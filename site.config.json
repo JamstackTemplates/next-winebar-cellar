@@ -1,7 +1,8 @@
 {
-  "name": "Jamstacks starter",
-  "description": "A neutral Next.js foundation for Jamstacks websites.",
-  "domain": "",
+  "name": "Wick & Bramble",
+  "description": "An intimate burgundy-and-candlelight wine bar with an editable glass and bottle list, small plates, tasting evenings, opening hours and location, and a Jamstacks contact component for tasting and private event enquiries.",
+  "domain": "next-winebar-cellar.jamstacks.net",
+  "timeZone": "America/New_York",
   "jamstacks": {
     "siteId": "",
     "cdnUrl": "https://cdn.jamstacks.net"

@@ -1,0 +1,22 @@
+{
+  "templateId": "next-winebar-cellar",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "captures": [
+    {
+      "mode": "light",
+      "sha256": "f84059c09d7fedbcb8aac355e649098259a47333af8c1899eb147e3a0f92516a",
+      "file": "jamstacks/home-light.jpg",
+      "bytes": 176564
+    },
+    {
+      "mode": "dark",
+      "sha256": "c61d2bc82fe7e856824dc3065fcc64fd7db88365b3fdb99cb686819fa4d157d8",
+      "file": "jamstacks/home-dark.jpg",
+      "bytes": 176786
+    }
+  ]
+}

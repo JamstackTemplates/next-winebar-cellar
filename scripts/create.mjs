@@ -3,7 +3,7 @@ import { resolve, dirname, relative, sep, basename } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const starterRoot = fileURLToPath(new URL('../', import.meta.url));
-const excluded = new Set(['.git', 'node_modules', '.next', 'out', '.env', '.env.local', '.env.production', 'tsconfig.tsbuildinfo', 'VALIDATION.md']);
+const excluded = new Set(['.git', 'node_modules', '.next', 'out', '.env', '.env.local', '.env.production', 'tsconfig.tsbuildinfo', 'VALIDATION.md', 'PLAN.md', 'PROMPT_TEMPLATE.md', 'jamstacks']);
 const inside = (parent, child) => child === parent || child.startsWith(parent + sep);
 
 async function exists(path) {
@@ -44,7 +44,7 @@ export async function createTemplate({ target, id, name, description = 'A Jamsta
   const config = JSON.parse(writes.get('site.config.json').toString());
   Object.assign(config, { name: name.trim(), description: description.trim(), domain: `${id}.jamstacks.net` });
   writes.set('site.config.json', json(config));
-  const business = writes.get('content/business.ts').toString().replace("name: 'Jamstacks starter',", `name: ${JSON.stringify(name.trim())},`);
+  const business = writes.get('content/business.ts').toString().replace(/name:\s*['"][^'"]+['"],/, `name: ${JSON.stringify(name.trim())},`);
   writes.set('content/business.ts', Buffer.from(business));
   writes.set('jamstacks/config.json', json({ name: name.trim(), description: description.trim(), tech: 'next', type: match[1], style: match[2], internal: false,
     components: ['support-form'], configFile: 'site.config.json', screenshots: { light: 'jamstacks/home-light.jpg', dark: 'jamstacks/home-dark.jpg', theme: { strategy: 'media' } } }));

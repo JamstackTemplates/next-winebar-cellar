@@ -1,0 +1,19 @@
+{
+  "name": "Cellar wine bar",
+  "description": "An intimate burgundy-and-candlelight wine bar with an editable glass and bottle list, small plates, tasting evenings, opening hours and location, and a Jamstacks contact component for tasting and private event enquiries.",
+  "tech": "next",
+  "type": "winebar",
+  "style": "cellar",
+  "internal": false,
+  "components": [
+    "support-form"
+  ],
+  "configFile": "site.config.json",
+  "screenshots": {
+    "light": "jamstacks/home-light.jpg",
+    "dark": "jamstacks/home-dark.jpg",
+    "theme": {
+      "strategy": "media"
+    }
+  }
+}

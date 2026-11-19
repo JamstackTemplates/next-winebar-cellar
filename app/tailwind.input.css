@@ -1,112 +1,465 @@
+@import '@fontsource-variable/literata/wght.css';
+@import '@fontsource-variable/literata/wght-italic.css';
+@import '@fontsource-variable/karla/wght.css';
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #f7f8fa;
-  --surface: #ffffff;
-  --text: #172033;
-  --muted: #526078;
-  --accent: #2457a7;
-  --accent-ink: #2457a7;
-  --on-accent: #ffffff;
-  --line: #c7cfdb;
-  --focus: #2457a7;
+  --bg: #F3EBDE;
+  --surface: #FCF6EB;
+  --surface-soft: #E8DBCD;
+  --text: #34222B;
+  --muted: #715B64;
+  --accent: #78334D;
+  --accent-text: #78334D;
+  --on-accent: #FFFFFF;
+  --rule: #B8A092;
+  --label: #F9EED8;
+  --label-shade: #EFE0C2;
+  --label-ink: #3E2830;
+  --label-muted: #5E424C;
+  --label-accent: #6D2842;
+  --label-rule: #C7B093;
+  --bottle: #33443B;
+  --bottle-stroke: #1D2923;
+  --red-wine: #713244;
+  --white-wine: #CEB66D;
+  --rose-wine: #D6978F;
+  --amber-wine: #B67336;
+  --candle: #A86628;
+  --focus: #216268;
+  --rack-wood: #5A382E;
+  --rack-shadow: rgba(52, 34, 43, 0.12);
+  --linen-line: rgba(120, 51, 77, 0.045);
+  --linen-cross: rgba(168, 102, 40, 0.03);
+  --candle-wash: rgba(168, 102, 40, 0.13);
+  --wine-wash: rgba(120, 51, 77, 0.07);
   --map-filter: none;
   color-scheme: light;
 }
+
 @media (prefers-color-scheme: dark) {
- :root:not(.light) {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
-  --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
-  color-scheme: dark;
- }
+  :root:not(.light) {
+    --bg: #21141B;
+    --surface: #302029;
+    --surface-soft: #3C2932;
+    --text: #F7EBDD;
+    --muted: #CEB5BD;
+    --accent: #963C59;
+    --accent-text: #EEB0C2;
+    --on-accent: #FFFFFF;
+    --rule: #90717B;
+    --label: #EAD8B9;
+    --label-shade: #DEC69F;
+    --label-ink: #3E2830;
+    --label-muted: #583B45;
+    --label-accent: #68243E;
+    --label-rule: #B59C7C;
+    --bottle: #253E34;
+    --bottle-stroke: #C6AEB7;
+    --red-wine: #B86B7F;
+    --white-wine: #D5BD7A;
+    --rose-wine: #E4ABA1;
+    --amber-wine: #DA9D5D;
+    --candle: #F0BE78;
+    --focus: #94D5D3;
+    --rack-wood: #6E473B;
+    --rack-shadow: rgba(9, 4, 7, 0.48);
+    --linen-line: rgba(247, 235, 221, 0.035);
+    --linen-cross: rgba(240, 190, 120, 0.025);
+    --candle-wash: rgba(240, 190, 120, 0.16);
+    --wine-wash: rgba(150, 60, 89, 0.18);
+    --map-filter: grayscale(0.35) brightness(0.82) contrast(1.05);
+    color-scheme: dark;
+  }
 }
+
 :root.dark {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
-  --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
+  --bg: #21141B;
+  --surface: #302029;
+  --surface-soft: #3C2932;
+  --text: #F7EBDD;
+  --muted: #CEB5BD;
+  --accent: #963C59;
+  --accent-text: #EEB0C2;
+  --on-accent: #FFFFFF;
+  --rule: #90717B;
+  --label: #EAD8B9;
+  --label-shade: #DEC69F;
+  --label-ink: #3E2830;
+  --label-muted: #583B45;
+  --label-accent: #68243E;
+  --label-rule: #B59C7C;
+  --bottle: #253E34;
+  --bottle-stroke: #C6AEB7;
+  --red-wine: #B86B7F;
+  --white-wine: #D5BD7A;
+  --rose-wine: #E4ABA1;
+  --amber-wine: #DA9D5D;
+  --candle: #F0BE78;
+  --focus: #94D5D3;
+  --rack-wood: #6E473B;
+  --rack-shadow: rgba(9, 4, 7, 0.48);
+  --linen-line: rgba(247, 235, 221, 0.035);
+  --linen-cross: rgba(240, 190, 120, 0.025);
+  --candle-wash: rgba(240, 190, 120, 0.16);
+  --wine-wash: rgba(150, 60, 89, 0.18);
+  --map-filter: grayscale(0.35) brightness(0.82) contrast(1.05);
   color-scheme: dark;
 }
 
 @theme {
   --color-*: initial;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --radius-ui: .375rem;
+  --font-serif: 'Literata Variable', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Karla Variable', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --radius-ui: 0.25rem;
 }
+
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
   --color-ink: var(--text);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
-  --color-accent-ink: var(--accent-ink);
+  --color-accent-text: var(--accent-text);
+  --color-accent-ink: var(--accent-text);
   --color-on-accent: var(--on-accent);
-  --color-line: var(--line);
+  --color-rule: var(--rule);
+  --color-line: var(--rule);
+  --color-label: var(--label);
+  --color-label-shade: var(--label-shade);
+  --color-label-ink: var(--label-ink);
+  --color-label-muted: var(--label-muted);
+  --color-label-accent: var(--label-accent);
+  --color-label-rule: var(--label-rule);
+  --color-bottle: var(--bottle);
+  --color-bottle-stroke: var(--bottle-stroke);
+  --color-rack-wood: var(--rack-wood);
+  --color-red-wine: var(--red-wine);
+  --color-white-wine: var(--white-wine);
+  --color-rose-wine: var(--rose-wine);
+  --color-amber-wine: var(--amber-wine);
+  --color-candle: var(--candle);
+  --color-focus: var(--focus);
 }
+
 :root {
   --measure: 42rem;
   --jamstacks-font-family: var(--font-sans);
   --jamstacks-color-text: var(--text);
   --jamstacks-color-background: var(--surface);
   --jamstacks-color-primary: var(--accent);
-  --jamstacks-color-border: var(--line);
+  --jamstacks-color-border: var(--rule);
   --jamstacks-color-muted: var(--muted);
-  --jamstacks-color-link: var(--accent-ink);
+  --jamstacks-color-link: var(--accent-text);
   --jamstacks-border-radius: var(--radius-ui);
   --jamstacks-control-height: 2.75rem;
   --jamstacks-spacing: 1rem;
   --jamstacks-form-max-width: 40rem;
   --jamstacks-toggle-color: var(--text);
   --jamstacks-toggle-dark-color: var(--text);
-  --jamstacks-toggle-border: var(--line);
+  --jamstacks-toggle-border: var(--rule);
   --jamstacks-toggle-background: var(--surface);
   --jamstacks-toggle-dark-background: var(--surface);
   --jamstacks-toggle-focus-color: var(--focus);
 }
+
 @layer base {
-  html { background: var(--bg); color: var(--text); font-family: var(--font-sans); scroll-padding-top: 1.5rem; }
-  body { margin: 0; line-height: 1.6; }
-  main { min-height: 65vh; }
-  a { text-underline-offset: .2em; }
-  a:hover { text-decoration: underline; }
-  button { cursor: pointer; }
-  :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-  [aria-current="page"] { text-decoration: underline; }
+  html {
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(ellipse 68% 44% at 78% 12%, var(--candle-wash), transparent 70%),
+      radial-gradient(ellipse 55% 40% at 15% 6%, var(--wine-wash), transparent 65%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 23px,
+        var(--linen-line) 23px,
+        var(--linen-line) 24px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 47px,
+        var(--linen-cross) 47px,
+        var(--linen-cross) 48px
+      );
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 100%;
+    scroll-padding-top: 7.5rem;
+  }
+  body {
+    margin: 0;
+    line-height: 1.62;
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+  }
+  main {
+    min-height: 65vh;
+  }
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+    transition: text-underline-offset 150ms ease, color 150ms ease;
+  }
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.28em;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  [aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.32em;
+    font-weight: 700;
+  }
+  section[id], article[id], div[id] {
+    scroll-margin-top: 7.5rem;
+  }
 }
-@utility wrap { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+
+@utility wrap {
+  width: min(100% - 2rem, 74rem);
+  margin-inline: auto;
+}
+
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 @layer components {
-  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .6rem 1.2rem; border: 1px solid var(--accent); border-radius: var(--radius-ui); background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
-  .button:hover { text-decoration: underline; }
-  .button-quiet { background: var(--surface); color: var(--accent-ink); border-color: var(--line); }
-  .text-link { color: var(--accent-ink); text-decoration: underline; }
-  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  .skip-link { position: absolute; left: 1rem; top: -8rem; padding: .75rem; z-index: 200; background: var(--surface); }
-  .skip-link:focus { top: 1rem; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.3rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-ui);
+    background: var(--accent);
+    color: var(--on-accent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 2px 6px var(--rack-shadow);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    text-decoration: none;
+    transition: transform 140ms ease, filter 140ms ease;
+  }
+  .button:hover {
+    text-decoration: underline;
+    filter: brightness(1.07);
+  }
+  .button-quiet {
+    background: var(--surface);
+    color: var(--accent-text);
+    border-color: var(--rule);
+    box-shadow: 0 1px 3px var(--rack-shadow);
+  }
+  .button-quiet:hover {
+    border-color: var(--accent-text);
+    filter: none;
+  }
+  .text-link {
+    color: var(--accent-text);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .label-link {
+    color: var(--label-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -8rem;
+    padding: 0.75rem 1rem;
+    z-index: 200;
+    background: var(--surface);
+    color: var(--text);
+    border: 2px solid var(--focus);
+    font-weight: 600;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  /* Hanging cream bottle label with clipped top corners, double inner frame and warm laid paper texture */
+  .cellar-label {
+    position: relative;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 19px,
+        rgba(62, 40, 48, 0.03) 19px,
+        rgba(62, 40, 48, 0.03) 20px
+      ),
+      linear-gradient(180deg, var(--label) 0%, var(--label-shade) 100%);
+    color: var(--label-ink);
+    border: 1px solid var(--label-rule);
+    box-shadow:
+      inset 0 0 0 3px var(--label),
+      inset 0 0 0 4px var(--label-rule),
+      0 8px 20px -6px var(--rack-shadow);
+    clip-path: polygon(
+      14px 0,
+      calc(100% - 14px) 0,
+      100% 14px,
+      100% 100%,
+      0 100%,
+      0 14px
+    );
+    animation: shelf-settle 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Architectural cellar alcove stage for the open shelf */
+  .cellar-alcove {
+    position: relative;
+    background:
+      radial-gradient(circle at 82% 38%, var(--candle-wash), transparent 52%),
+      radial-gradient(circle at 50% 42%, var(--wine-wash), transparent 62%),
+      linear-gradient(180deg, var(--surface-soft) 0%, var(--surface) 100%);
+    border: 1px solid var(--rule);
+    box-shadow: inset 0 0 0 3px var(--bg), inset 0 0 0 4px var(--rule);
+  }
+
+  /* Double-bordered editorial frame for sections and tasting cards */
+  .cellar-frame {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    box-shadow: inset 0 0 0 3px var(--bg), inset 0 0 0 4px var(--rule);
+  }
+
+  /* Sculpted horizontal timber/brass cellar shelf beam */
+  .shelf-beam {
+    height: 12px;
+    background: linear-gradient(180deg, var(--rack-wood) 0%, var(--bottle-stroke) 100%);
+    border-top: 2px solid var(--candle);
+    border-bottom: 1px solid var(--rule);
+    box-shadow: 0 6px 14px var(--rack-shadow);
+  }
+
+  /* Dotted leader line between item title and price */
+  .leader-dots {
+    flex: 1 1 auto;
+    border-bottom: 1px dotted var(--rule);
+    margin-inline: 0.5rem;
+    transform: translateY(-0.28em);
+  }
+
+  .label-leader-dots {
+    flex: 1 1 auto;
+    border-bottom: 1px dotted var(--label-rule);
+    margin-inline: 0.5rem;
+    transform: translateY(-0.28em);
+  }
+
+  /* Native details disclosure styling */
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] .faq-chevron {
+    transform: rotate(45deg);
+  }
 }
-.map iframe { width: 100%; min-height: 20rem; border: 0; filter: var(--map-filter); }
-.enquiry__host { display: block; }
-.enquiry__status { margin-top: 1rem; color: var(--muted); }
-.enquiry[data-state="present"] > .enquiry__status { display: none; }
+
+@keyframes shelf-settle {
+  from {
+    transform: translateY(-3px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes candle-glow {
+  0%, 100% {
+    opacity: 0.78;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.candle-flame-halo {
+  transform-origin: center;
+  animation: candle-glow 3.6s ease-in-out infinite;
+}
+
+.map iframe {
+  width: 100%;
+  min-height: 21rem;
+  border: 0;
+  filter: var(--map-filter);
+}
+
+.enquiry__host {
+  display: block;
+}
+.enquiry__status {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+.enquiry[data-state="present"] > .enquiry__status {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
+
 @media print {
-  nav, .skip-link, .enquiry, button { display: none !important; }
-  html { background: white; color: black; }
-  a { color: inherit; }
+  header, footer, nav, .skip-link, .enquiry, .no-print, .decorative-art, button {
+    display: none !important;
+  }
+  html {
+    background: white !important;
+    background-image: none !important;
+    color: black !important;
+  }
+  .cellar-label, .cellar-frame, .cellar-alcove {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #888 !important;
+    box-shadow: none !important;
+    clip-path: none !important;
+  }
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
 }
